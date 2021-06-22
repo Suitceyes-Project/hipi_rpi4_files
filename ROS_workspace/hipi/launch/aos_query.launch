@@ -1,0 +1,8 @@
+<launch>
+  <node name="joy_node" pkg="joy" type="joy_node">
+    <param name="joy_node/dev" value="/dev/input/js0" />
+  </node>
+  <node name="aos_query" pkg="hipi" type="aos_query.py" output="screen"/>
+  <node name="aos_vision" pkg="hipi" type="aos_vision.py" output="screen"/>
+  <node name="haptogram_belt" pkg="hipi" type="haptogram_belt.py" output="screen"/>
+</launch>

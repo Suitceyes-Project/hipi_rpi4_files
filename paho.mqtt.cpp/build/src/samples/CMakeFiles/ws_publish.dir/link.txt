@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/ws_publish.dir/ws_publish.cpp.o  -o ws_publish  -Wl,-rpath,/home/leedssc/paho.mqtt.cpp/build/src:/usr/local/lib: ../libpaho-mqttpp3.so.1.2.0 /usr/local/lib/libpaho-mqtt3as.so /usr/lib/aarch64-linux-gnu/libssl.so /usr/lib/aarch64-linux-gnu/libcrypto.so -pthread 

@@ -1,0 +1,52 @@
+Update, a step-by-step guide to enabling I2C:
+
+Last week my last parts came in, so I finished the hardware and configured Ubuntu 20.04. I was about to start tinkering with I2C, when Thomas commented on my original answer, linking this article written by Alexander Rüedlinger. With that missing piece in hand, getting I2C up was a breeze. The below should be adaptable to SPI as well.
+
+    Navigate to raspi-config on archive.raspberrypi.org. Pick the latest version.
+
+    Download that file to /tmp and try to install using dpkg.
+
+    wget https://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_*INSERT DATE*_all.deb -P /tmp
+
+    sudo dpkg -i /tmp/raspi-config_*INSERT DATE*_all.deb
+
+    This results in an error, reporting missing dependencies. Read the output and install the dependencies:
+
+    sudo apt-get install *INSERT DEPENDENCIES*
+
+    This botched the install of alsa-utils, one of the dependencies. To fix, run:
+
+    sudo apt-get -fy
+
+    Now install raspi-config:
+
+    sudo dpkg -i /tmp/raspi-config_*INSERT DATE*_all.deb
+
+    Run raspi-config, navigate to 'Interfacing Options', enable I2C.
+
+    Install relevant packages. You'll want i2c-tools at least, but I'd recommend getting libi2c-dev as well and python3-smbus if that's your language of choice.
+
+    Try probing the bus as user and root:
+
+    sudo i2cdetect -y 1 (or 0, I2C bus number is hardware-dependent)
+
+    If this gives you an address matrix, I2C is on and working.
+
+    i2cdetect -y 1 (or 0)
+
+    If this gives you a permission error, perform the next step. Otherwise, skip it.
+
+    Create an I2C usergroup, apply it to the bus and add your user to this group:
+
+    sudo groupadd i2c (group may exist already)
+
+    sudo chown :i2c /dev/i2c-1 (or i2c-0)
+
+    sudo chmod g+rw /dev/i2c-1
+
+    sudo usermod -aG i2c *INSERT YOUR USERNAME*
+
+    Log out and log in. I was connected via VS code's SSH extension and needed to reboot. Then retry:
+
+    i2cdetect -y 1
+
