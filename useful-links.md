@@ -2,7 +2,7 @@
 
 ROS Noetic Installation:
 
-{% embed url="http://wiki.ros.org/noetic/Installation/Ubuntu" %}
+[http://wiki.ros.org/noetic/Installation/Ubuntu](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
 
 
@@ -14,19 +14,19 @@ ROS Tutorials
 
 Raspberry Pi Ubuntu Mate 20.04:
 
-{% embed url="https://ubuntu-mate.org/raspberry-pi/" %}
+[https://ubuntu-mate.org/raspberry-pi/](https://ubuntu-mate.org/raspberry-pi/)
 
 
 
 PCA 9685 Overview and Guide
 
-{% embed url="https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all" %}
+[https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all](https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all)
 
 
 
 DRV8833 OVerview and Guide
 
-{% embed url="https://learn.adafruit.com/adafruit-drv8833-dc-stepper-motor-driver-breakout-board?view=all" %}
+[https://learn.adafruit.com/adafruit-drv8833-dc-stepper-motor-driver-breakout-board?view=all](https://learn.adafruit.com/adafruit-drv8833-dc-stepper-motor-driver-breakout-board?view=all)
 
 
 
