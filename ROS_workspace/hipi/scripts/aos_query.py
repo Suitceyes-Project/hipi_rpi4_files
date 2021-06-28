@@ -29,7 +29,7 @@ if __name__ == '__main__':
     rospy.init_node('aos_query', anonymous=True)
     rospy.Subscriber("joy", Joy, joy_callback)
     querypub = rospy.Publisher('query_index', Int16, queue_size=5)
-    rospy.Subscriber("acdtion_command", Int16, action_command_callback)
+    rospy.Subscriber("action_command", Int16, action_command_callback)
     sentpub = rospy.Publisher('query_sent', Bool, queue_size=5)
     rate = rospy.Rate(5)
     time.sleep(2)
